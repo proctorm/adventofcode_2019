@@ -27,7 +27,7 @@ opcode_input[3] = 2
 
 process_opcodes(opcode_input)[1]
 
-# Star 2
+# Star 4
 use_intcode <- function (noun_verb) {
   noun = noun_verb[1]
   verb = noun_verb[2]
