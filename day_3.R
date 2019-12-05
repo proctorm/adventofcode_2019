@@ -41,5 +41,20 @@ parse_instruction <- function (p, instruction) {
 }
 
 return_intercepts <- function(path1, path2) {
-  
+  concat = list(
+    x = c(path1$x, path2$x), 
+    y = c(path1$y, path2$y)
+  )
+  dup_i = duplicated(data.frame(concat))
+  return((list(
+    x = concat$x[dup_i], 
+    y = concat$y[dup_i]
+  )))
 }
+
+taxicab <- function(p) {
+  answer <- abs(p$x) + abs(p$y)
+  answer[answer == 0] <- NA
+  return(answer)
+}
+
